@@ -121,7 +121,7 @@ class GF_Tooltips_Front
 		}
 
 		// Render and return.
-		return self::render_tooltip_markup( $field->customTooltip, $type, $content, $field, $form_id );
+		return self::render_tooltip_markup( $field, $form_id, $field->customTooltip, $type, $content );
 	}
 
 	/**
@@ -133,7 +133,7 @@ class GF_Tooltips_Front
 	 *
 	 * @return string $render  The updated field markup.
 	 */
-	public static function render_tooltip_markup( $text = '', $type = '', $render = '', $field, $form_id ) {
+	public static function render_tooltip_markup( $field, $form_id, $text = '', $type = '', $render = '' ) {
 
 		// Grab our tooltip design, target, and size.
 		$design        = GF_Tooltips_Helper::get_tooltip_data( 'design', 'light' );
